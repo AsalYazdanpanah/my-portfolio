@@ -1,171 +1,193 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React from 'react';
+import { motion } from 'framer-motion';
 
 function Portfolio() {
   return (
-    <div className="bg-gray-900 text-white min-h-screen flex flex-col items-center px-4 py-10">
-      {/* Full-Width Header with Stronger Glow Effect */}
+    <div 
+  className="min-h-screen w-full text-white flex flex-col items-center overflow-x-hidden"
+  style={{
+    backgroundImage: "url('/galaxy.jpg')",
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundColor: '#111827', // Fallback color
+    backgroundBlendMode: 'overlay'
+  }}
+>
+      {/* Header */}
       <motion.div
-        className="bg-gradient-to-r from-purple-700 to-pink-500 py-4 px-6 flex justify-center gap-8 shadow-lg w-full rounded-b-lg border-b-4 border-purple-500"
+        className="bg-gradient-to-r from-purple-700 to-pink-500 py-4 px-4 fixed top-0 w-full z-10 shadow-lg"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        whileHover={{ boxShadow: "0px 0px 30px rgba(199, 146, 234, 1)" }}
-        transition={{ duration: 0.2 }}
-      >
-        {["CV", "LinkedIn", "GitHub", "Email"].map((item, index) => (
-          <motion.a
-            key={index}
-            href={
-              item === "CV"
-                ? "your-cv.pdf"
-                : item === "LinkedIn"
-                ? "https://linkedin.com"
-                : item === "GitHub"
-                ? "https://github.com"
-                : "mailto:asalyp83@gmail.com"
-            }
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white font-semibold px-4 text-lg hover:underline"
-            whileHover={{
-              scale: 1.2,
-              color: "#C792EA",
-              textShadow: "0px 0px 15px rgba(199, 146, 234, 1)",
-            }}
-            transition={{ duration: 0.2 }}
-          >
-            {item}
-          </motion.a>
-        ))}
-      </motion.div>
-
-      {/* Main Content with Stronger Glow and Alignment Fixes */}
-      <motion.div
-        className="max-w-3xl w-full bg-[#1E1E2E] p-10 mt-12 rounded-lg shadow-lg text-center border-4 border-purple-500 relative"
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.3 }}
-        whileHover={{
-          boxShadow: "0px 0px 30px rgba(199, 146, 234, 1)",
-          borderColor: "#C792EA",
-        }}
       >
-        {/* Profile Section */}
-        <motion.div
-          className="flex flex-col items-center text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-        >
-          <img
-            src="your-photo.jpg"
-            alt="Asal Yazdanpanah"
-            className="w-36 h-36 rounded-full border-4 border-purple-400 shadow-lg"
-          />
-          <h1 className="text-4xl text-purple-300 font-bold mt-4">
-            Asal Yazdanpanah
-          </h1>
-          <p className="text-lg mt-2">
-            Psychology Student at{" "}
+        <div className="max-w-3xl mx-auto flex flex-wrap justify-center items-center gap-4 text-center">
+          {["CV", "LinkedIn", "GitHub", "Email"].map((item, index) => (
             <motion.a
-              href="https://ut.ac.ir/en"
+              key={index}
+              href={
+                item === "CV"
+                  ? "your-cv.pdf"
+                  : item === "LinkedIn"
+                  ? "https://linkedin.com"
+                  : item === "GitHub"
+                  ? "https://github.com"
+                  : "mailto:asalyp83@gmail.com"
+              }
               target="_blank"
               rel="noopener noreferrer"
-              className="text-purple-300 hover:underline"
+              className="text-white font-semibold text-sm md:text-base px-2 py-1 whitespace-nowrap"
               whileHover={{
-                scale: 1.2,
-                color: "#C792EA",
-                textShadow: "0px 0px 15px rgba(199, 146, 234, 1)",
+                scale: 1.1,
+                color: "#E0BBFF",
+                textShadow: "0 0 10px rgba(199, 146, 234, 1)",
               }}
               transition={{ duration: 0.2 }}
             >
-              University of Tehran
+              {item}
             </motion.a>
-          </p>
-        </motion.div>
+          ))}
+        </div>
+      </motion.div>
 
-        {/* About Me Section */}
+      {/* Main Content */}
+      <main className="pt-20 pb-20 px-4 w-full flex justify-center">
         <motion.div
-          className="mt-8 bg-[#282A36] p-6 rounded-lg shadow-md border-4 border-purple-500 relative"
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.3 }}
+          className="w-full max-w-3xl bg-gray-800 p-6 md:p-10 rounded-xl border-2 border-purple-600 shadow-lg text-center"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
           whileHover={{
-            boxShadow: "0px 0px 30px rgba(199, 146, 234, 1)",
             borderColor: "#C792EA",
+            boxShadow: "0px 0px 20px rgba(199, 146, 234, 1)",
           }}
-        >
-          <h2 className="text-2xl text-purple-300 font-bold">About Me</h2>
-          <p className="mt-2">
-            I am a psychology student passionate about cognitive science, human
-            emotions, and behavioral psychology.
-          </p>
-        </motion.div>
-
-        {/* Projects Section */}
-        <motion.div
-          className="mt-8 bg-[#282A36] p-6 rounded-lg shadow-md border-4 border-purple-500 relative"
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.3 }}
-          whileHover={{
-            boxShadow: "0px 0px 30px rgba(199, 146, 234, 1)",
-            borderColor: "#C792EA",
-          }}
         >
-          <h2 className="text-2xl text-purple-300 font-bold">Projects</h2>
-          <ul className="list-none space-y-3 mt-4 text-left">
-            {[
-              {
-                name: "Project 1",
-                url: "https://example.com/project1",
-                description: "Research on cognitive behavior and perception.",
-              },
-              {
-                name: "Project 2",
-                url: "https://example.com/project2",
-                description: "Psychological study on human emotions.",
-              },
-              {
-                name: "Project 3",
-                url: "https://example.com/project3",
-                description: "Mental health awareness campaign.",
-              },
-            ].map((project, index) => (
-              <motion.li
-                key={index}
-                className="text-purple-300 hover:underline"
+          {/* Profile */}
+          <motion.div
+            className="flex flex-col items-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+          >
+            <img
+              src="your-photo.jpg"
+              alt="Asal Yazdanpanah"
+              className="w-28 h-28 md:w-32 md:h-32 rounded-full border-4 border-purple-400 shadow-lg"
+              
+            />
+            <h1 className="text-2xl md:text-3xl text-purple-400 font-bold mt-4">
+              Asal Yazdanpanah
+              
+            </h1>
+            <p className="text-base md:text-lg mt-2">
+              Psychology Student at{" "}
+              <motion.a
+                href="https://ut.ac.ir/en"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-400 ml-1 hover:text-purple-300"
                 whileHover={{
                   scale: 1.1,
                   color: "#C792EA",
-                  textShadow: "0px 0px 15px rgba(199, 146, 234, 1)",
+                  textShadow: "0 0 10px rgba(199, 146, 234, 1)",
                 }}
+                transition={{ duration: 0.2 }}
               >
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-purple-300 hover:underline"
-                >
-                  {project.name}
-                </a>{" "}
-                - {project.description}
-              </motion.li>
-            ))}
-          </ul>
-        </motion.div>
-      </motion.div>
+                University of Tehran
+              </motion.a>
+            </p>
+          </motion.div>
 
-      {/* Full-Width Footer with Stronger Glow */}
-      <motion.div
-        className="text-center py-6 mt-12 bg-gradient-to-r from-purple-700 to-pink-500 w-full border-t-4 border-purple-500"
+          {/* About */}
+          <motion.div
+            className="mt-8 bg-gray-700 p-6 rounded-lg border-2 border-purple-600 shadow-md"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            whileHover={{
+              scale: 1.03,
+              borderColor: "#C792EA",
+              boxShadow: "0px 0px 20px rgba(199, 146, 234, 1)",
+            }}
+            transition={{ duration: 0.2 }}
+          >
+            <h2 className="text-xl md:text-2xl text-purple-400 font-bold">
+              <i className="fas fa-user mr-2"></i> About Me
+            </h2>
+            <p className="mt-2 text-sm md:text-base">
+              I am a psychology student passionate about cognitive science, human emotions, and behavioral psychology.
+            </p>
+          </motion.div>
+
+          {/* Projects */}
+          <motion.div
+            className="mt-8 bg-gray-700 p-6 rounded-lg border-2 border-purple-600 shadow-md text-center"
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            whileHover={{
+              scale: 1.03,
+
+              borderColor: "#C792EA",
+              boxShadow: "0px 0px 20px rgba(199, 146, 234, 1)",
+            }}
+            transition={{ duration: 0.2 }}
+          >
+            <h2 className="text-xl md:text-2xl text-purple-400 font-bold flex justify-center items-center">
+              <i className="fas fa-folder-open mr-2"></i> Projects
+            </h2>
+            <ul className="list-none mt-4 space-y-3 text-sm md:text-base text-left max-w-md mx-auto">
+              {[
+                {
+                  name: "Project 1",
+                  url: "https://example.com/project1",
+                  description: "Research on cognitive behavior and perception.",
+                },
+                {
+                  name: "Project 2",
+                  url: "https://example.com/project2",
+                  description: "Psychological study on human emotions.",
+                },
+                {
+                  name: "Project 3",
+                  url: "https://example.com/project3",
+                  description: "Mental health awareness campaign.",
+                },
+              ].map((project, index) => (
+                <motion.li
+                  key={index}
+                  whileHover={{
+                    scale: 1.05,
+                    color: "#C792EA",
+                    textShadow: "0 0 10px rgba(199, 146, 234, 1)",
+                  }}
+                  className="flex items-start gap-2"
+                >
+                  <i className="fas fa-book text-gray-400 mt-1"></i>
+                  <div>
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-purple-400 font-semibold hover:underline focus:outline-none focus:text-purple-300 visited:text-purple-400"
+                    >
+                      {project.name}
+                    </a>{" "}
+                    – {project.description}
+                  </div>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+        </motion.div>
+      </main>
+
+      {/* Footer */}
+      <motion.footer
+        className="w-full text-center py-4 bg-gradient-to-r from-purple-700 to-pink-500 text-sm md:text-base fixed bottom-0"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
-        whileHover={{ boxShadow: "0px 0px 30px rgba(199, 146, 234, 1)" }}
       >
         © 2025 Asal Yazdanpanah | All Rights Reserved
-      </motion.div>
+      </motion.footer>
     </div>
   );
 }
