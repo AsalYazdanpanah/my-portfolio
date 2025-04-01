@@ -4,13 +4,16 @@ import { motion } from 'framer-motion';
 function Portfolio() {
   return (
     <div 
-  className="min-h-screen w-full text-white flex flex-col items-center overflow-x-hidden relative bg-shine"
+  className="min-h-screen w-full text-white flex flex-col items-center overflow-x-hidden relative"
   style={{
-    backgroundImage: "url('/galaxy.jpg')",
+    backgroundImage: `
+      radial-gradient(circle at center, rgba(255,255,255,0.15) 0%, transparent 70%),
+      url('/galaxy.jpg')
+    `,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    filter: 'brightness(1.15) saturate(1.1)',
-    backdropFilter: 'brightness(1.05)'
+    backgroundBlendMode: 'screen',
+    filter: 'brightness(1.2) contrast(1.1) saturate(1.3)'
   }}
 >
       {/* Header */}
