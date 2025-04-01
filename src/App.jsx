@@ -4,18 +4,14 @@ import { motion } from 'framer-motion';
 function Portfolio() {
   return (
     <div 
-  className="min-h-screen w-full text-white flex flex-col items-center overflow-x-hidden relative"
+  className="relative min-h-screen w-full text-white flex flex-col items-center overflow-x-hidden"
   style={{
-    backgroundImage: `
-      radial-gradient(circle at center, rgba(255,255,255,0.15) 0%, transparent 70%),
-      url('/galaxy.jpg')
-    `,
+    backgroundImage: "url('/galaxy.jpg')",
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    backgroundBlendMode: 'screen',
-    filter: 'brightness(1.2) contrast(1.1) saturate(1.3)'
   }}
 >
+  <div className="absolute inset-0 bg-white opacity-10 pointer-events-none"></div>
       {/* Header */}
       <motion.div
         className="bg-gradient-to-r from-purple-700 to-pink-500 py-4 px-4 fixed top-0 w-full z-10 shadow-lg"
@@ -77,10 +73,18 @@ function Portfolio() {
               className="w-28 h-28 md:w-32 md:h-32 rounded-full border-4 border-purple-400 shadow-lg"
               
             />
-            <h1 className="text-2xl md:text-3xl text-purple-400 font-bold mt-4">
-              Asal Yazdanpanah
-              
-            </h1>
+            <motion.h1
+  className="text-2xl md:text-3xl text-purple-400 font-bold mt-4"
+  
+  whileHover={{
+    scale: 1.05,
+    color: "#C792EA",
+    textShadow: "0 0 10px rgba(199, 146, 234, 1)",
+  }}
+  
+>
+  Asal Yazdanpanah
+</motion.h1>
             <p className="text-base md:text-lg mt-2">
               Psychology Student at{" "}
               <motion.a
