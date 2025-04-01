@@ -85,7 +85,8 @@ body {
   -ms-overflow-style: none; /* For IE/Edge */
 }
 
-/* Add this new rule */
 .bg-shine {
-  transition: filter 0.4s ease-out, backdrop-filter 0.4s ease-out;
+  transition: 
+    filter 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    background-image 0.8s ease;
 }
