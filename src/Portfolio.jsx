@@ -12,7 +12,6 @@ function Portfolio() {
     backgroundBlendMode: 'overlay'
   }}
 >
-      {/* Header */}
       <motion.div
         className="bg-gradient-to-r from-purple-700 to-pink-500 py-4 px-4 fixed top-0 w-full z-10 shadow-lg"
         initial={{ opacity: 0, y: -20 }}
