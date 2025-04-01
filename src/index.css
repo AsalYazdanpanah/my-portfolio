@@ -84,3 +84,8 @@ body {
   scrollbar-width: none; /* For Firefox */
   -ms-overflow-style: none; /* For IE/Edge */
 }
+
+/* Add this new rule */
+.bg-shine {
+  transition: filter 0.4s ease-out, backdrop-filter 0.4s ease-out;
+}
