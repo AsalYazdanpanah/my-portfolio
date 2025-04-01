@@ -3,7 +3,16 @@ import { motion } from 'framer-motion';
 
 function Portfolio() {
   return (
-    <div className="min-h-screen w-full bg-gray-900 text-white flex flex-col items-center overflow-x-hidden">
+    <div 
+  className="min-h-screen w-full text-white flex flex-col items-center overflow-x-hidden"
+  style={{
+    backgroundImage: "url('/galaxy.jpg')",
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundColor: '#111827', // Fallback color
+    backgroundBlendMode: 'overlay'
+  }}
+>
       {/* Header */}
       <motion.div
         className="bg-gradient-to-r from-purple-700 to-pink-500 py-4 px-4 fixed top-0 w-full z-10 shadow-lg"
@@ -41,11 +50,15 @@ function Portfolio() {
       </motion.div>
 
       {/* Main Content */}
-      <main className="pt-28 pb-20 px-4 w-full flex justify-center">
+      <main className="pt-20 pb-20 px-4 w-full flex justify-center">
         <motion.div
-          className="w-full max-w-3xl bg-[#1E1E2E] p-6 md:p-10 rounded-xl border-2 border-purple-500 shadow-lg text-center"
+          className="w-full max-w-3xl bg-gray-800 p-6 md:p-10 rounded-xl border-2 border-purple-600 shadow-lg text-center"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
+          whileHover={{
+            borderColor: "#C792EA",
+            boxShadow: "0px 0px 20px rgba(199, 146, 234, 1)",
+          }}
           transition={{ duration: 0.3 }}
         >
           {/* Profile */}
@@ -59,9 +72,11 @@ function Portfolio() {
               src="your-photo.jpg"
               alt="Asal Yazdanpanah"
               className="w-28 h-28 md:w-32 md:h-32 rounded-full border-4 border-purple-400 shadow-lg"
+              
             />
-            <h1 className="text-2xl md:text-3xl text-purple-300 font-bold mt-4">
+            <h1 className="text-2xl md:text-3xl text-purple-400 font-bold mt-4">
               Asal Yazdanpanah
+              
             </h1>
             <p className="text-base md:text-lg mt-2">
               Psychology Student at{" "}
@@ -69,7 +84,7 @@ function Portfolio() {
                 href="https://ut.ac.ir/en"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-purple-300 ml-1 hover:text-purple-400"
+                className="text-purple-400 ml-1 hover:text-purple-300"
                 whileHover={{
                   scale: 1.1,
                   color: "#C792EA",
@@ -84,16 +99,17 @@ function Portfolio() {
 
           {/* About */}
           <motion.div
-            className="mt-8 bg-[#282A36] p-6 rounded-lg border-2 border-purple-500 shadow-md"
+            className="mt-8 bg-gray-700 p-6 rounded-lg border-2 border-purple-600 shadow-md"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             whileHover={{
+              scale: 1.03,
               borderColor: "#C792EA",
               boxShadow: "0px 0px 20px rgba(199, 146, 234, 1)",
             }}
             transition={{ duration: 0.2 }}
           >
-            <h2 className="text-xl md:text-2xl text-purple-300 font-bold">
+            <h2 className="text-xl md:text-2xl text-purple-400 font-bold">
               <i className="fas fa-user mr-2"></i> About Me
             </h2>
             <p className="mt-2 text-sm md:text-base">
@@ -103,16 +119,18 @@ function Portfolio() {
 
           {/* Projects */}
           <motion.div
-            className="mt-8 bg-[#282A36] p-6 rounded-lg border-2 border-purple-500 shadow-md text-center"
+            className="mt-8 bg-gray-700 p-6 rounded-lg border-2 border-purple-600 shadow-md text-center"
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             whileHover={{
+              scale: 1.03,
+
               borderColor: "#C792EA",
               boxShadow: "0px 0px 20px rgba(199, 146, 234, 1)",
             }}
             transition={{ duration: 0.2 }}
           >
-            <h2 className="text-xl md:text-2xl text-purple-300 font-bold flex justify-center items-center">
+            <h2 className="text-xl md:text-2xl text-purple-400 font-bold flex justify-center items-center">
               <i className="fas fa-folder-open mr-2"></i> Projects
             </h2>
             <ul className="list-none mt-4 space-y-3 text-sm md:text-base text-left max-w-md mx-auto">
@@ -148,7 +166,7 @@ function Portfolio() {
                       href={project.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-purple-300 font-semibold hover:underline focus:outline-none focus:text-purple-300 visited:text-purple-300"
+                      className="text-purple-400 font-semibold hover:underline focus:outline-none focus:text-purple-300 visited:text-purple-400"
                     >
                       {project.name}
                     </a>{" "}
