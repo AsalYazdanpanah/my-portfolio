@@ -4,14 +4,14 @@ import { motion } from 'framer-motion';
 function Portfolio() {
   return (
     <div 
-  className="relative min-h-screen w-full text-white flex flex-col items-center overflow-x-hidden"
+  className="min-h-screen w-full text-white flex flex-col items-center overflow-x-hidden"
   style={{
     backgroundImage: "url('/galaxy.jpg')",
     backgroundSize: 'cover',
     backgroundPosition: 'center',
+    backgroundBlendMode: 'overlay'
   }}
 >
-  <div className="absolute inset-0 bg-white opacity-10 pointer-events-none"></div>
       {/* Header */}
       <motion.div
         className="bg-gradient-to-r from-purple-700 to-pink-500 py-4 px-4 fixed top-0 w-full z-10 shadow-lg"
@@ -73,14 +73,14 @@ function Portfolio() {
               className="w-28 h-28 md:w-32 md:h-32 rounded-full border-4 border-purple-400 shadow-lg"
               
             />
-            <motion.h1
+              <motion.h1
   className="text-2xl md:text-3xl text-purple-400 font-bold mt-4"
   
   whileHover={{
-    scale: 1.05,
-    color: "#C792EA",
-    textShadow: "0 0 10px rgba(199, 146, 234, 1)",
-  }}
+                    scale: 1.05,
+                    color: "#C792EA",
+                    textShadow: "0 0 10px rgba(199, 146, 234, 1)",
+                  }}
   
 >
   Asal Yazdanpanah
@@ -200,3 +200,4 @@ function Portfolio() {
 }
 
 export default Portfolio;
+
