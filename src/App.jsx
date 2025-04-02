@@ -1,19 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import galaxyImage from '/galaxy.jpg';
+import profilePhoto from '/profile.jpg';
 
 function Portfolio() {
   return (
-    <div className="relative h-screen w-full text-white overflow-hidden">
-      {/* Cosmic Background */}
-      <div 
-        className="absolute inset-0 -z-10"
-        style={{
-          backgroundImage: "url('./galaxy.jpg')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          filter: 'brightness(0.56) contrast(1.35) saturate(1.5)'
-        }}
-      />
+    <div 
+  className="fixed inset-0" // Changed from absolute to fixed
+  style={{
+    backgroundImage: `url(${galaxyImage})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    filter: 'brightness(0.56) contrast(1.35) saturate(1.4)'
+      }}
+      >
       
       {/* Fixed Header - Made thinner (py-3 instead of py-4) */}
       <motion.header
@@ -71,9 +71,9 @@ function Portfolio() {
               transition={{ delay: 0.2, duration: 0.4 }}
             >
               <img
-                src="your-photo.jpg"
+                src={profilePhoto}
                 alt="Asal Yazdanpanah"
-                className="w-28 h-28 md:w-32 md:h-32 rounded-full border-4 border-purple-400 shadow-lg"
+                className="w-28 h-28 md:w-32 md:h-32 rounded-full border-4 border-purple-400 shadow-lg object-cover"
               />
               <motion.h1
                 className="text-2xl md:text-3xl text-purple-400 font-bold mt-4"
@@ -93,9 +93,9 @@ function Portfolio() {
                   rel="noopener noreferrer"
                   className="text-purple-400 ml-1 hover:text-purple-300"
                   whileHover={{
-                    scale: 1.1,
+                    scale: 1.7,
                     color: "#C792EA",
-                    textShadow: "0 0 10px rgba(199, 146, 234, 1)",
+                    textShadow: "0 0 40px rgb(234, 146, 187)",
                   }}
                   transition={{ duration: 0.2 }}
                 >
@@ -103,7 +103,6 @@ function Portfolio() {
                 </motion.a>
               </p>
             </motion.div>
-
             {/* About Section */}
             <motion.section
               className="mt-8 bg-gray-700 p-6 rounded-lg border-2 border-purple-600 shadow-md"
