@@ -11,7 +11,7 @@ function Portfolio() {
     backgroundImage: `url(${galaxyImage})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    filter: 'brightness(0.56) contrast(1.45) saturate(1.35)'
+    filter: 'brightness(0.56) contrast(1.35) saturate(1.18)'
       }}
       >
       
@@ -69,11 +69,13 @@ function Portfolio() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.4 }}
+              
             >
               <img
                 src={profilePhoto}
                 alt="Asal Yazdanpanah"
                 className="w-28 h-28 md:w-32 md:h-32 rounded-full border-4 border-purple-400 shadow-lg object-cover"
+              
               />
               <motion.h1
                 className="text-2xl md:text-3xl text-purple-400 font-bold mt-4"
