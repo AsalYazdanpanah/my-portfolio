@@ -11,7 +11,7 @@ function Portfolio() {
     backgroundImage: `url(${galaxyImage})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    filter: 'brightness(0.56) contrast(1.35) saturate(1.4)'
+    filter: 'brightness(0.56) contrast(1.45) saturate(1.35)'
       }}
       >
       
