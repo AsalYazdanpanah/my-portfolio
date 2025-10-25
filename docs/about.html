@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>About Me — Your Name</title>
+
+    <!-- Tailwind build (same file you use on index.html) -->
+    <link rel="stylesheet" href="/src/style.css" />
+
+    <!-- Favicon (optional) -->
+    <link rel="icon" href="/public/favicon.ico" />
+    <meta name="description" content="About me — research interests, projects, and background." />
+  </head>
+  <body class="antialiased bg-white text-zinc-900">
+    <!-- Header / Nav -->
+    <header class="border-b">
+      <div class="mx-auto max-w-5xl px-4 py-4 flex items-center justify-between">
+        <a href="./" class="text-xl font-semibold">Your Name</a>
+        <nav class="flex items-center gap-6 text-sm">
+          <a href="./" class="hover:underline">Home</a>
+          <a href="./projects.html" class="hover:underline hidden sm:inline">Projects</a>
+          <a href="./about.html" class="font-medium underline">About</a>
+          <a href="./research.html" class="hover:underline hidden sm:inline">Research</a>
+          <a href="./contact.html" class="hover:underline hidden sm:inline">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="mx-auto max-w-5xl px-4 py-10 sm:py-14">
+      <div class="grid gap-8 sm:gap-12 sm:grid-cols-[220px,1fr] items-start">
+        <img
+          src="/me.jpg"
+          alt="Profile portrait"
+          class="w-40 h-40 sm:w-56 sm:h-56 rounded-2xl object-cover ring-1 ring-zinc-200" />
+        <div>
+          <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight">About Me</h1>
+          <p class="mt-4 text-zinc-600 leading-relaxed">
+            I’m <span class="font-medium">Your Name</span>, a researcher focused on
+            computational cognitive science, NLP, and large-scale sleep/biomedical signal analysis.
+            I enjoy building rigorous datasets, clean pipelines, and readable research artifacts that
+            others can reuse.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-2 text-xs">
+            <span class="px-3 py-1 rounded-full ring-1 ring-zinc-200">NLP</span>
+            <span class="px-3 py-1 rounded-full ring-1 ring-zinc-200">Mechanistic Interpretability</span>
+            <span class="px-3 py-1 rounded-full ring-1 ring-zinc-200">Biomedical Signals</span>
+            <span class="px-3 py-1 rounded-full ring-1 ring-zinc-200">Cultural Analytics</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Facts -->
+    <section class="mx-auto max-w-5xl px-4 py-4">
+      <div class="grid gap-6 sm:grid-cols-3">
+        <div class="p-5 rounded-2xl ring-1 ring-zinc-200">
+          <h2 class="text-sm font-medium">Current</h2>
+          <p class="mt-2 text-zinc-600 text-sm">
+            Graduate researcher; building a >10k Persian story corpus and diachronic analyses.
+          </p>
+        </div>
+        <div class="p-5 rounded-2xl ring-1 ring-zinc-200">
+          <h2 class="text-sm font-medium">Previously</h2>
+          <p class="mt-2 text-zinc-600 text-sm">
+            ENS–PSL (Paris) internship on cognition & culture; multiple TA roles in cognitive science.
+          </p>
+        </div>
+        <div class="p-5 rounded-2xl ring-1 ring-zinc-200">
+          <h2 class="text-sm font-medium">Keywords</h2>
+          <p class="mt-2 text-zinc-600 text-sm">
+            Transformers, Kalman filtering, EEG/ECG, corpus construction, reproducible workflows.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline / Highlights -->
+    <section class="mx-auto max-w-5xl px-4 py-10">
+      <h2 class="text-xl font-semibold">Highlights</h2>
+      <ol class="mt-6 relative border-s border-zinc-200">
+        <li class="ms-5 pb-6">
+          <div class="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full bg-zinc-900"></div>
+          <h3 class="font-medium">ENS–PSL Internship (Paris)</h3>
+          <p class="text-sm text-zinc-600">Corpus of &gt;10,000 Persian stories; pipeline design; manuscript in prep.</p>
+        </li>
+        <li class="ms-5 pb-6">
+          <div class="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full bg-zinc-900"></div>
+          <h3 class="font-medium">Humor in Online Negotiations</h3>
+          <p class="text-sm text-zinc-600">Mixed-methods codebook of humor types; qualitative coding framework.</p>
+        </li>
+        <li class="ms-5">
+          <div class="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full bg-zinc-900"></div>
+          <h3 class="font-medium">Systematic Review: Diabetes & Working Memory</h3>
+          <p class="text-sm text-zinc-600">PRISMA workflow, screening & visualization; manuscript in preparation.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- CTA -->
+    <section class="mx-auto max-w-5xl px-4 pb-16">
+      <div class="p-6 sm:p-8 rounded-2xl ring-1 ring-zinc-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <h3 class="font-semibold">Want to collaborate?</h3>
+          <p class="text-sm text-zinc-600">I’m open to research collabs, internships, and dataset work.</p>
+        </div>
+        <a href="mailto:your.email@example.com"
+           class="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-zinc-900 text-white text-sm">
+          Email me
+        </a>
+      </div>
+    </section>
+
+    <!-- Optional footer -->
+    <footer class="border-t">
+      <div class="mx-auto max-w-5xl px-4 py-6 text-xs text-zinc-500">
+        © <span id="y"></span> Your Name
+      </div>
+    </footer>
+
+    <script>
+      // footer year
+      document.getElementById('y').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
