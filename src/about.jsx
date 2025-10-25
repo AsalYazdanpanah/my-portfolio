@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 
 // اگر بک‌گراند یا استایل تیره می‌خواهی، می‌تونی همون کلاس‌های Tailwind/کد خودت رو اینجا هم اعمال کنی
-import AboutPage from './AboutPage.jsx'
+import AboutPage from './assets/AboutPage.jsx'
 
 ReactDOM.createRoot(document.getElementById('about-root')).render(
   <React.StrictMode>
