@@ -23,6 +23,16 @@ function Portfolio() {
         transition={{ duration: 0.3 }}
       >
         <div className="max-w-3xl mx-auto flex flex-wrap justify-center items-center gap-4 text-center">
+
+           <motion.a
+      href="./about.html"
+      className="text-white font-semibold text-sm md:text-base px-2 py-1 whitespace-nowrap"
+      whileHover={{ scale: 1.15, color: "#E0BBFF", textShadow: "0 0 10px rgba(199,146,234,1)" }}
+      transition={{ duration: 0.2 }}
+    >
+      About
+    </motion.a> 
+          
           {["CV", "LinkedIn", "GitHub", "Email"].map((item, index) => (
             <motion.a
               key={index}
