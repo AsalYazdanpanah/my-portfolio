@@ -16,30 +16,38 @@ function Portfolio() {
       >
       
       {/* Fixed Header - Made thinner (py-3 instead of py-4) */}
-      <motion.header
-        className="fixed top-0 w-full z-50 bg-gradient-to-r from-purple-700 to-pink-500 py-3 px-4 shadow-lg"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3 }}
+   <motion.header
+  className="fixed top-0 w-full z-50 bg-gradient-to-r from-purple-700 to-pink-500 py-3 px-4 shadow-lg"
+  initial={{ opacity: 0, y: -20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.3 }}
+>
+  <div className="max-w-3xl mx-auto flex flex-wrap justify-center items-center gap-4 text-center">
+
+    {/* NEW: About link */}
+    <motion.a
+      href="./about.html"
+      className="text-white font-semibold text-sm md:text-base px-2 py-1 whitespace-nowrap"
+      whileHover={{ scale: 1.15, color: "#E0BBFF", textShadow: "0 0 10px rgba(199,146,234,1)" }}
+      transition={{ duration: 0.2 }}
+    >
+      About
+    </motion.a>
+
+    {["CV", "LinkedIn", "GitHub", "Email"].map((item, index) => (
+      <motion.a
+        key={index}
+        href="#"
+        className="text-white font-semibold text-sm md:text-base px-2 py-1 whitespace-nowrap"
+        whileHover={{ scale: 1.15, color: "#E0BBFF", textShadow: "0 0 10px rgba(199,146,234,1)" }}
+        transition={{ duration: 0.2 }}
       >
-        <div className="max-w-3xl mx-auto flex flex-wrap justify-center items-center gap-4 text-center">
-          {["CV", "LinkedIn", "GitHub", "Email"].map((item, index) => (
-            <motion.a
-              key={index}
-              href="#"
-              className="text-white font-semibold text-sm md:text-base px-2 py-1 whitespace-nowrap"
-              whileHover={{
-                scale: 1.15,
-                color: "#E0BBFF",
-                textShadow: "0 0 10px rgba(199, 146, 234, 1)",
-              }}
-              transition={{ duration: 0.2 }}
-            >
-              {item}
-            </motion.a>
-          ))}
-        </div>
-      </motion.header>
+        {item}
+      </motion.a>
+    ))}
+  </div>
+</motion.header>
+
 
       {/* Scrollable Content Area - Completely hidden scrollbar */}
       <div className="h-full pt-[60px] pb-[76px] overflow-y-auto" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
