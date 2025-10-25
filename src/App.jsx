@@ -2,6 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import galaxyImage from '/galaxy.jpg';
 import profilePhoto from '/profile.jpg';
+import Portfolio from './Portfolio.jsx'
+export default function App(){ return <Portfolio /> }
+
 
 function Portfolio() {
   return (
